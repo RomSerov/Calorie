@@ -1,8 +1,6 @@
 plugins {
-    alias(libs.plugins.androidApplication)
+    alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsKotlinAndroid)
-    alias(libs.plugins.dagger.hilt.android)
-    alias(libs.plugins.kapt)
 }
 
 android {
@@ -10,7 +8,7 @@ android {
     compileSdk = 34
 
     defaultConfig {
-        minSdk = 23
+        minSdk = 26
     }
 
     buildTypes {
@@ -34,10 +32,4 @@ android {
 dependencies {
 
     implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.lifecycle.runtime.ktx)
-    implementation(libs.androidx.activity.compose)
-    implementation(platform(libs.androidx.compose.bom))
-
-    implementation(libs.dagger.hilt.android)
-    kapt(libs.dagger.hilt.compiler)
 }

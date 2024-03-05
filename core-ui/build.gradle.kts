@@ -1,5 +1,5 @@
 plugins {
-    alias(libs.plugins.androidApplication)
+    alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsKotlinAndroid)
 }
 
@@ -8,7 +8,7 @@ android {
     compileSdk = 34
 
     defaultConfig {
-        minSdk = 23
+        minSdk = 26
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -38,14 +38,16 @@ android {
 
 dependencies {
 
+    implementation(libs.androidx.core.ktx)
     implementation(platform(libs.androidx.compose.bom))
 
-    api(libs.androidx.compose.ui)
-    api(libs.androidx.compose.ui.graphics)
-    api(libs.androidx.compose.ui.tooling.preview)
-    api(libs.androidx.compose.runtime)
-    api(libs.androidx.material3)
+    implementation(libs.androidx.compose.ui)
 
-    debugApi(libs.androidx.compose.ui.tooling)
-    debugApi(libs.androidx.compose.ui.test.manifest)
+//    implementation(libs.androidx.compose.ui.graphics)
+//    api(libs.androidx.compose.ui.tooling.preview)
+//    api(libs.androidx.compose.runtime)
+    implementation(libs.androidx.material3)
+//
+//    debugApi(libs.androidx.compose.ui.tooling)
+//    debugApi(libs.androidx.compose.ui.test.manifest)
 }
